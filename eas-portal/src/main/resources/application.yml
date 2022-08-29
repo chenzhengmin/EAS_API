@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev #默认为开发环境0
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis:
+  mapper-locations:
+    - classpath*:dao/*.xml
+  configuration:
+    map-underscore-to-camel-case: true #驼峰命名自动识别配置
+
+
+#分页插件
+pagehelper:
+  auto-dialect: mysql
+  params: count=countSql
+  reasonable: true
+  support-methods-arguments: true
